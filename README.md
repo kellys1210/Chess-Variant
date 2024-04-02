@@ -9,41 +9,34 @@ This chess game is implemented using object-oriented programming principles in P
 ## Features
 
 - Movement validation according to the rules of chess.
-- Collision detection to prevent illegal moves.
 - Support for all standard chess pieces: King, Queen, Bishop, Knight, Rook, and Pawn.
-- Check and checkmate detection.
+- Special fairy pieces: Falcon and Hunter, which have unique movement patterns.
 - Simple console-based user interface for playing the game.
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository and run the game using the following commands:
 
-    ```bash
-    git clone https://github.com/kellys1210/chess-game.git
-    ```
+```bash
+git clone https://github.com/kellys1210/chess-game.git
+cd chess-game
+python main.py
+```
 
-2. Navigate to the project directory:
+## Special Pieces
 
-    ```bash
-    cd chess-game
-    ```
+### Falcon
 
-3. Run the game:
+The Falcon is a special fairy piece that can move forward like a bishop or backward like a rook.
 
-    ```bash
-    python main.py
-    ```
+### Hunter
 
-## Usage
-
-- Use the arrow keys to navigate the board.
-- Press `Enter` to select a piece and choose its destination.
-- Follow the prompts to play the game.
+The Hunter is another special fairy piece that can move forward like a rook or backward like a bishop.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements, or you find any bugs, please feel free to open an issue or create a pull request.
+Contributions are welcome! If you have suggestions for improvements or you find any bugs, please feel free to open an issue or create a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
