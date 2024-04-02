@@ -13,16 +13,6 @@ This chess game is implemented using object-oriented programming principles in P
 - Special fairy pieces: Falcon and Hunter, which have unique movement patterns.
 - Simple console-based user interface for playing the game.
 
-## Installation
-
-Clone the repository and run the game using the following commands:
-
-```bash
-git clone https://github.com/kellys1210/chess-game.git
-cd chess-game
-python main.py
-```
-
 ## Special Pieces
 
 ### Falcon
@@ -32,6 +22,16 @@ The Falcon is a special fairy piece that can move forward like a bishop or backw
 ### Hunter
 
 The Hunter is another special fairy piece that can move forward like a rook or backward like a bishop.
+
+## Installation
+
+Clone the repository and run the game using the following commands:
+
+```bash
+git clone https://github.com/kellys1210/chess-game.git
+cd chess-game
+python main.py
+```
 
 ## Contributing
 
