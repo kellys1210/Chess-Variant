@@ -1,6 +1,3 @@
-User
-can you give me a readme for this code 
-
 # Author: Kelly Shields
 # GitHub username: kellys1210
 # Date: 2/29/2024
@@ -18,15 +15,15 @@ can you give me a readme for this code
 # If a player's king is captured, the game ends, and that player loses.
 
 class Piece:
-    """Initializes chess piece object creation with attributes: color, position, number_moves, captured status, and
-    icon. Each individual piece type will inherit from this class. Contains methods for using piece's icon and obtaining
-    color and position outside of class.
+    """Initializes a chess piece object with attributes such as color, position, number of moves, captured status, and icon.
+    Each individual piece type will inherit from this class. Contains methods for using the piece's icon and obtaining
+    color and position outside of the class.
     """
 
     def __init__(self, color, position, icon):
-        """Initializes Piece objects; attributes: color, position (on board), icon, and captured.
-        Each piece will be initialized to their starting position with 0 moves made and not currently captured.
-        Icon will be initialized to none and updated in each piece's own class.
+        """Initializes Piece objects with attributes: color, position (on board), icon, and captured.
+        Each piece is initialized to its starting position with 0 moves made and not currently captured.
+        The icon is initialized to None and updated in each piece's own class.
         """
 
         self._color = color
@@ -35,37 +32,37 @@ class Piece:
         self._captured = "NO"
 
     def get_color(self):
-        """Method to allow use of Piece object's color outside of class. Accepts no parameters, returns self._color
+        """Method to allow access to the color of the Piece object outside of the class.
+        Accepts no parameters, returns self._color.
         """
-
         return self._color
 
     def get_position(self):
-        """Method to allow use of Piece object's position outside of class. Accepts no parameters, returns self._position
+        """Method to allow access to the position of the Piece object outside of the class.
+        Accepts no parameters, returns self._position.
         """
-
         return self._position
 
     def get_icon(self):
-        """Method to allow use of Piece object's icon outside of class. Accepts no parameters, returns self._icon
+        """Method to allow access to the icon of the Piece object outside of the class.
+        Accepts no parameters, returns self._icon.
         """
-
         return self._icon
 
     def set_captured(self):
-        """Method to set piece as captured. Accepts no parameters, no return.
+        """Method to set the piece as captured.
+        Accepts no parameters, no return.
         """
-
         self._captured = 'YES'
 
 
 class King(Piece):
-    """Class for King piece objects, inheriting from Piece class. Contains method for creating/obtaining legal moves.
+    """Class for King piece objects, inheriting from the Piece class. Contains a method for creating/obtaining legal moves.
     """
 
     def __init__(self, color, position, icon):
-        """Initializes King piece objects; inherits color, position, and icon from Piece class. Initializes legal_moves
-        list to list of coordinates corresponding to moves King can make.
+        """Initializes King piece objects; inherits color, position, and icon from the Piece class.
+        Initializes legal_moves list to a list of coordinates corresponding to moves the King can make.
         """
 
         super().__init__(color, position, icon)
@@ -74,20 +71,19 @@ class King(Piece):
         self._legal_moves = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
 
     def get_legal_moves(self):
-        """Method for obtaining King's legal move list outside of class. Takes no parameters, returns self._legal_moves
+        """Method for obtaining the King's legal move list outside of the class.
+        Takes no parameters, returns self._legal_moves.
         """
-
         return self._legal_moves
 
 
 class Queen(Piece):
-    """Class for Queen piece objects, inheriting from Piece class. Contains method for creating/obtaining legal moves.
+    """Class for Queen piece objects, inheriting from the Piece class. Contains a method for creating/obtaining legal moves.
     """
 
     def __init__(self, color, position, icon):
-        """Initializes Queen piece objects; inherits color, position, and icon from Piece class. Initializes legal_moves
-        to an empty list which will be filled with list of coordinates corresponding to moves Queen can make in
-        get_legal_moves method.
+        """Initializes Queen piece objects; inherits color, position, and icon from the Piece class.
+        Initializes legal_moves to an empty list which will be filled with a list of coordinates corresponding to moves the Queen can make in the get_legal_moves method.
         """
 
         super().__init__(color, position, icon)
@@ -96,11 +92,9 @@ class Queen(Piece):
         self._legal_moves = []
 
     def get_legal_moves(self):
-        """Method for obtaining Queen's legal move list outside of class. Takes no parameters, returns self._legal_moves
+        """Method for obtaining the Queen's legal move list outside of the class.
+        Takes no parameters, returns self._legal_moves.
         """
-
-        # A loop with range of 0-8 to represent rows and columns as indices, iterates through each to generate coordinates
-        # for possible positions Queen can move to
         for num in range(8):
             self._legal_moves.append((0, num))      # Move to the right
             self._legal_moves.append((0, -num))     # Move to the left
@@ -110,17 +104,16 @@ class Queen(Piece):
             self._legal_moves.append((num, -num))   # Diagonal right down
             self._legal_moves.append((-num, num))   # Diagonal left up
             self._legal_moves.append((-num, -num))  # Diagonal left down
-
         return self._legal_moves
 
 
 class Knight(Piece):
-    """Class for Knight piece objects, inheriting from Piece class. Contains method for creating/obtaining legal moves.
+    """Class for Knight piece objects, inheriting from the Piece class. Contains a method for creating/obtaining legal moves.
     """
 
     def __init__(self, color, position, icon):
-        """Initializes Knight piece objects; inherits color, position, and icon from Piece class. Initializes legal_moves
-        list to list of coordinates corresponding to moves Knight can make.
+        """Initializes Knight piece objects; inherits color, position, and icon from the Piece class.
+        Initializes legal_moves list to a list of coordinates corresponding to moves the Knight can make.
         """
 
         super().__init__(color, position, icon)
@@ -129,20 +122,19 @@ class Knight(Piece):
         self._legal_moves = [(2, 1), (-2, 1), (1, 2), (-1, 2), (2, -1), (-2, -1), (1, -2), (-1, -2)]
 
     def get_legal_moves(self):
-        """Method for obtaining Knight's legal move list outside of class. Takes no parameters, returns self._legal_moves
+        """Method for obtaining the Knight's legal move list outside of the class.
+        Takes no parameters, returns self._legal_moves.
         """
-
         return self._legal_moves
 
 
 class Bishop(Piece):
-    """Class for Bishop pieces objects, inheriting from Piece class. Contains method for creating/obtaining legal moves.
+    """Class for Bishop piece objects, inheriting from the Piece class. Contains a method for creating/obtaining legal moves.
     """
 
     def __init__(self, color, position, icon):
-        """Initializes Bishop piece objects; inherits color, position, and icon from Piece class. Initializes legal_moves
-        to an empty list which will be filled with list of coordinates corresponding to moves Bishop can make in
-        get_legal_moves method.
+        """Initializes Bishop piece objects; inherits color, position, and icon from the Piece class.
+        Initializes legal_moves to an empty list which will be filled with a list of coordinates corresponding to moves the Bishop can make in the get_legal_moves method.
         """
 
         super().__init__(color, position, icon)
@@ -151,93 +143,77 @@ class Bishop(Piece):
         self._legal_moves = []
 
     def get_legal_moves(self):
-        """Method for obtaining Bishop's legal move list outside of class. Takes no parameters, returns self._legal_moves
+        """Method for obtaining the Bishop's legal move list outside of the class.
+        Takes no parameters, returns self._legal_moves.
         """
-
-        # A loop with range of 0-8 to represent rows and columns as indices, iterates through each to generate coordinates
-        # for possible positions Bishop can move to
         for num in range(8):
-            self._legal_moves.append((num, num))  # Diagonal right up
-            self._legal_moves.append((num, -num))  # Diagonal right down
-            self._legal_moves.append((-num, num))  # Diagonal left up
+            self._legal_moves.append((num, num))    # Diagonal right up
+            self._legal_moves.append((num, -num))   # Diagonal right down
+            self._legal_moves.append((-num, num))   # Diagonal left up
             self._legal_moves.append((-num, -num))  # Diagonal left down
-
         return self._legal_moves
 
 
 class Rook(Piece):
-    """Class for Rook piece objects, inheriting from Piece class. Contains method for creating/obtaining legal moves.
+    """Class for Rook piece objects, inheriting from the Piece class. Contains a method for creating/obtaining legal moves.
     """
 
     def __init__(self, color, position, icon):
-        """Initializes Rook piece objects; inherits color, position, and icon from Piece class. Initializes legal_moves
-        to an empty list which will be filled with list of coordinates corresponding to moves Rook can make in
-        get_legal_moves method.
+        """Initializes Rook piece objects; inherits color, position, and icon from the Piece class.
+        Initializes legal_moves to an empty list which will be filled with a list of coordinates corresponding to moves the Rook can make in the get_legal_moves method.
         """
 
         super().__init__(color, position, icon)
 
-        # Rook can move any numbers of squares along a row or column
+        # Rook can move any number of squares horizontally or vertically
         self._legal_moves = []
 
     def get_legal_moves(self):
-        """Method for obtaining Rook's legal move list outside of class. Takes no parameters, returns self._legal_moves
+        """Method for obtaining the Rook's legal move list outside of the class.
+        Takes no parameters, returns self._legal_moves.
         """
-
-        # A loop with range of 0-8 to represent rows and columns as indices, iterates through each to generate coordinates
-        # for possible positions Rook can move to
         for num in range(8):
-            self._legal_moves.append((0, num))  # Move to the right
-            self._legal_moves.append((0, -num))  # Move to the left
-            self._legal_moves.append((num, 0))  # Move up
-            self._legal_moves.append((-num, 0))  # Move down
-
+            self._legal_moves.append((0, num))      # Move to the right
+            self._legal_moves.append((0, -num))     # Move to the left
+            self._legal_moves.append((num, 0))      # Move up
+            self._legal_moves.append((-num, 0))     # Move down
         return self._legal_moves
 
 
 class Pawn(Piece):
-    """Class for Pawn piece objects, inheriting from Piece class. Contains method for creating/obtaining legal moves.
+    """Class for Pawn piece objects, inheriting from the Piece class. Contains a method for creating/obtaining legal moves.
     """
 
-    def __init__(self, game, color, position, icon):
-        """Initializes Pawn piece objects; inherits color, position, and icon from Piece class. Initializes number_moves
-        to 0, used to determine whether Pawn piece can move 1 or 2 squares. Initializes 'game' which is a reference to
-        ChessVar object, allows get_players_turn method to be utilized in determining which moves are allowed for each
-        Pawn piece.
+    def __init__(self, color, position, icon):
+        """Initializes Pawn piece objects; inherits color, position, and icon from the Piece class.
+        Initializes legal_moves list to a list of coordinates corresponding to moves the Pawn can make.
         """
 
         super().__init__(color, position, icon)
 
-        self._game = game
-        self._number_moves = 0
+        # Pawn can move forward 1 square, 2 squares on first move, and capture diagonally
+        self._legal_moves = []
 
     def get_legal_moves(self):
-        """Method for obtaining Pawn's legal move list outside of class. Takes no parameters, returns self._legal_moves
+        """Method for obtaining the Pawn's legal move list outside of the class.
+        Takes no parameters, returns self._legal_moves.
         """
+        # White pawn moves
+        if self._color == 'white':
+            self._legal_moves.append((0, 1))        # Move forward 1
+            if self._position[1] == 1:              # If pawn is at starting position
+                self._legal_moves.append((0, 2))    # Move forward 2
+            self._legal_moves.append((-1, 1))      # Capture diagonally left
+            self._legal_moves.append((1, 1))       # Capture diagonally right
+        # Black pawn moves
+        else:
+            self._legal_moves.append((0, -1))       # Move forward 1
+            if self._position[1] == 6:              # If pawn is at starting position
+                self._legal_moves.append((0, -2))   # Move forward 2
+            self._legal_moves.append((-1, -1))     # Capture diagonally left
+            self._legal_moves.append((1, -1))      # Capture diagonally right
+        return self._legal_moves
 
-        # If Pawn piece has not yet moved, can move 2 squares. If it has moved, can only move one square. 'number_moves'
-        # count is incremented when move is made. If player is 'WHITE', pieces can only move forward with positive
-        # number. If player is 'BLACK', piece can only move forward with negative number (otherwise moving backwards
-        # would be legal for pawn, which it is not.)
-
-        if self._game.get_players_turn() == 'WHITE':
-            if self._number_moves != 0:
-                return [(0, 1), (0, -1)]
-            else:
-                return [(0, 1), (0, -1), (0, 2), (0, -2)]
-
-        if self._game.get_players_turn() == 'BLACK':
-            if self._number_moves != 0:
-                return [(0, -1)]
-            else:
-                return [(0, -1), (0, -2)]
-
-    def set_number_moves(self):
-        """Allows Pawn piece number of moves to be incremented to determine if first move has been made/piece
-        can no longer move 2 spaces forward
-        """
-
-        self._number_moves += 1
 
 
 class Hunter(Piece):
@@ -283,229 +259,96 @@ class Falcon(Piece):
 
 
 class Board:
-    """Class which contains Board object; board object contains just one attribute of 'board'.
-    This represents the 8x8 chess board, which is initialized as a list of 8 lists. Each inner list represents
-    a row on the board and each element in the list contains either a piece object (set to standard chess starting
-    positions) or set to None if spot starts as empty. Contains a method for displaying the board in its current state
-    to the console and a get method for referencing the current state of the board outside the class.
+    """Class for the chess board. Initializes an 8x8 grid with Piece objects representing the current state of the game.
+    Contains methods for initializing the board, displaying the board, moving pieces, and checking for checkmate.
     """
 
     def __init__(self):
-        """Board object initialized with 'board' attribute which is both a functional and visual representation of the
-        chess board. Initialized as a list of 8 lists, each element represents a space on the board. The add_piece method
-        will add Piece objects to the board.
-
-        The board will be set to beginning positions based on standard chess rules; if a space is occupied, the board
-        object contains the Piece object of that piece. If not is not occupied, the board object's position is set to
-        None.
-        """
-
-        self._board = [
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-            [None, None, None, None, None, None, None, None],
-        ]
+        """Initialize the board with None values to represent empty squares."""
+        self._board = [[None] * 8 for _ in range(8)]
 
     def print_board(self):
-        """Print the current state of the game board. *** This was provided by TA Em for me to use with debugging***"""
-        print('The current state of the game board:')
-        print('     a    b    c    d    e    f    g    h')
-        for row in range(8, 0, -1):
-            col_char: int = 97
-            cur_row_formatted = []
-            for col in range(8):
-                square = self._board[row - 1][col]
-                if square is not None:
-                    cur_row_formatted.append(square.get_icon())
+        """Print the current state of the board."""
+        print('  a b c d e f g h')
+        for row, row_data in enumerate(self._board[::-1], 1):
+            print(row, end=' ')
+            for piece in row_data:
+                if piece is not None:
+                    print(piece.get_icon(), end=' ')
                 else:
-                    cur_row_formatted.append(' ')
-                col_char += 1
-            print(f"{row}: {cur_row_formatted}")
-        print('\n')
+                    print('.', end=' ')
+            print()
 
     def add_piece(self, piece, row, column):
-        """Method to add Piece objects to board in standard starting positions.
-        """
-
+        """Add a piece to the board at the specified position."""
         self._board[row][column] = piece
 
     def get_board(self):
-        """Method to reference current board state outside of method; accepts no parameters, returns board
-        """
-
+        """Return the current state of the board."""
         return self._board
 
-
 class ChessVar:
-    """Class which creates chess game object. Initializes data members current_state and players_turn to starting positions,
-    player move count to 0.
-    Initializes capture count to 0, gets/sets game state (unfinished, white won, black won),
-    allows player to make a move, allows player to enter fairy pieces, gets/sets current player turn. Contains methods for
-    getting/setting game state, getting/setting player turn, making a move, converting string position arguments to
-    (x,y) coordinates, and entering fairy piece.
+    """Class representing a chess game with attributes representing: game state, current player's turn, how many turns have
+    occurred, how many pieces each player has captured, and how many special pieces each player has entered. Initializes objects 
+    for Board class and initializes chess pieces.
     """
 
     def __init__(self):
-        """Initializes ChessVar attributes: state, players_turn, turn count, and player's captured count and
-        if a special piece has been used yet. Also instantiates the Board and Piece classes.
-        """
-
+        """Initialize ChessVar attributes."""
         self._state = 'UNFINISHED'
-        self._players_turn = 'WHITE'      # Initialized to white since white player always goes first
+        self._players_turn = 'WHITE'
         self._turn_count = 0
-        self._player1_captures = 0        # To contain captured pieces count
+        self._player1_captures = 0
         self._player2_captures = 0
-        self._player1_special = None
-        self._player2_special = None
-
-        # Instantiates Board
+        self._player1_special = 0
+        self._player2_special = 0
         self._current_board = Board()
+        self._initialize_pieces()
 
-        # Instantiates Pieces and adds them to board in Board class in standard starting positions
-        # using add_piece method, uses row/column to place pieces on board. Pawn pieces initialized with 'self' attribute
-        # to be able to reference ChessVar object within its methods
+    def _initialize_pieces(self):
+        """Initialize pieces on the board."""
+        # White pieces
+        white_pieces = [('♔', King), ('♕', Queen), ('♘', Knight), ('♗', Bishop),
+                        ('♖', Rook), ('♙', Pawn)]
+        for row, piece_type in enumerate(white_pieces, start=1):
+            for col in range(8):
+                piece_symbol, piece_class = piece_type
+                piece = piece_class('WHITE', None, piece_symbol)
+                self._current_board.add_piece(piece, row - 1, col)
+        # Black pieces
+        black_pieces = [('♚', King), ('♛', Queen), ('♞', Knight), ('♝', Bishop),
+                        ('♜', Rook), ('♟', Pawn)]
+        for row, piece_type in enumerate(black_pieces, start=7):
+            for col in range(8):
+                piece_symbol, piece_class = piece_type
+                piece = piece_class('BLACK', None, piece_symbol)
+                self._current_board.add_piece(piece, row - 1, col)
 
-        self._wK = King('WHITE', 'd1', "♔")
-        self._current_board.add_piece(self._wK, 0, 3)
-
-        self._wq = Queen('WHITE', 'e1', "♕")
-        self._current_board.add_piece(self._wq, 0, 4)
-
-        self._wk1 = Knight('WHITE', 'b1', "♘")
-        self._current_board.add_piece(self._wk1, 0, 1)
-
-        self._wk2 = Knight('WHITE', 'g1', "♘")
-        self._current_board.add_piece(self._wk2, 0, 6)
-
-        self._wb1 = Bishop('WHITE', 'c1', "♗")
-        self._current_board.add_piece(self._wb1, 0, 2)
-
-        self._wb2 = Bishop('WHITE', 'f1', "♗")
-        self._current_board.add_piece(self._wb2, 0, 5)
-
-        self._wr1 = Rook('WHITE', 'a1', "♖")
-        self._current_board.add_piece(self._wr1, 0, 0)
-
-        self._wr2 = Rook('WHITE', 'h1', "♖")
-        self._current_board.add_piece(self._wr2, 0, 7)
-
-        self._wp1 = Pawn(self, 'WHITE', 'a2', "♙")
-        self._current_board.add_piece(self._wp1, 1, 0)
-
-        self._wp2 = Pawn(self, 'WHITE', 'b2', "♙")
-        self._current_board.add_piece(self._wp2, 1, 1)
-
-        self._wp3 = Pawn(self, 'WHITE', 'c2', "♙")
-        self._current_board.add_piece(self._wp3, 1, 2)
-
-        self._wp4 = Pawn(self, 'WHITE', 'd2', "♙")
-        self._current_board.add_piece(self._wp4, 1, 3)
-
-        self._wp5 = Pawn(self, 'WHITE', 'e2', "♙")
-        self._current_board.add_piece(self._wp5, 1, 4)
-
-        self._wp6 = Pawn(self, 'WHITE', 'f2', "♙")
-        self._current_board.add_piece(self._wp6, 1, 5)
-
-        self._wp7 = Pawn(self, 'WHITE', 'g2', "♙")
-        self._current_board.add_piece(self._wp7, 1, 6)
-
-        self._wp8 = Pawn(self, 'WHITE', 'h2', "♙")
-        self._current_board.add_piece(self._wp8, 1, 7)
-
+    def _initialize_fairy_pieces(self):
+        """Initialize fairy pieces without placing on board."""
         self._wf = Falcon('WHITE', None, '𓅃')
         self._wh = Hunter('WHITE', None, "↗")
-
-        self._bK = King('BLACK', 'd8', "♚")
-        self._current_board.add_piece(self._bK, 7, 3)
-
-        self._bq = Queen('BLACK', 'e8', "♛")
-        self._current_board.add_piece(self._bq, 7, 4)
-
-        self._bk1 = Knight('BLACK', 'b8', "♞")
-        self._current_board.add_piece(self._bk1, 7, 1)
-
-        self._bk2 = Knight('BLACK', 'g8', "♞")
-        self._current_board.add_piece(self._bk2, 7, 6)
-
-        self._bb1 = Bishop('BLACK', 'c8', "♝")
-        self._current_board.add_piece(self._bb1, 7, 2)
-
-        self._bb2 = Bishop('BLACK', 'f8', "♝")
-        self._current_board.add_piece(self._bb2, 7, 5)
-
-        self._br1 = Rook('BLACK', 'a8', "♜")
-        self._current_board.add_piece(self._br1, 7, 0)
-
-        self._br2 = Rook('BLACK', 'h8', "♜")
-        self._current_board.add_piece(self._br2, 7, 7)
-
-        self._bp1 = Pawn(self, 'BLACK', 'a7', "♟︎")
-        self._current_board.add_piece(self._bp1, 6, 0)
-
-        self._bp2 = Pawn(self, 'BLACK', 'b7', "♟︎")
-        self._current_board.add_piece(self._bp2, 6, 1)
-
-        self._bp3 = Pawn(self, 'BLACK', 'c7', "♟︎")
-        self._current_board.add_piece(self._bp3, 6, 2)
-
-        self._bp4 = Pawn(self, 'BLACK', 'd7', "♟︎")
-        self._current_board.add_piece(self._bp4, 6, 3)
-
-        self._bp5 = Pawn(self, 'BLACK', 'e7', "♟︎")
-        self._current_board.add_piece(self._bp5, 6, 4)
-
-        self._bp6 = Pawn(self, 'BLACK', 'f7', "♟︎")
-        self._current_board.add_piece(self._bp6, 6, 5)
-
-        self._bp7 = Pawn(self, 'BLACK', 'g7', "♟︎")
-        self._current_board.add_piece(self._bp7, 6, 6)
-
-        self._bp8 = Pawn(self, 'BLACK', 'h7', "♟︎")
-        self._current_board.add_piece(self._bp8, 6, 7)
-
-        self._bf = Falcon('BLACK', None, "𓅃")
+        self._bf = Falcon('BLACK', None, '𓅃')
         self._bh = Hunter('BLACK', None, "↗")
 
-
     def get_game_state(self):
-        """Method for player to determine state of gameplay; takes no parameters, returns:
-
-        "UNFINISHED": game is currently in play
-        "WHITE_WON": player playing white pieces has won
-        "BLACK_WON": player playing black pieces has won
-        """
-
+        """Get the current state of the game."""
         return self._state
 
-    def set_game_state(self, current_state):
-        """Method for setting state of gameplay; accepts current_state parameter as a string, returns nothing
-        """
-
-        self._state = current_state
+    def set_game_state(self, state):
+        """Set the state of the game."""
+        self._state = state
 
     def get_players_turn(self):
-        """Method to determine whose turn it is; either white or black, used to determine validity of moves, accepts no
-        parameters returns player turn.
-        """
-
+        """Get the current player's turn."""
         return self._players_turn
 
     def set_players_turn(self, player):
-        """Method for setting state of gameplay; accepts current_state parameter as a string, returns nothing
-        """
-
+        """Set the current player's turn."""
         self._players_turn = player
 
     def get_turn_count(self):
-        """Method to obtain current game's turn count outside of class. Accepts no parameters, returns turn count.
-        """
-
+        """Get the number of turns."""
         return self._turn_count
 
     def make_move(self, moved_from, moved_to):
@@ -521,11 +364,6 @@ class ChessVar:
         Otherwise, returns True, indicated move is made, any captured pieces are removed, game state is updated if
         necessary, and whose turn it is is updated.
         """
-
-        # DEBUG: Print the current state of the game board.
-        print(f"Move From: {moved_from}")
-        print(f"Move to: {moved_to}")
-        self._current_board.print_board()
 
         # Checks status of game
         if self._state == 'WHITE_WON' or self._state == 'BLACK_WON':
@@ -544,18 +382,18 @@ class ChessVar:
         # Allows Board object's current board to be referenced
         board = self._current_board.get_board()
 
-        # Checks if moved_to space is occupied by own piece
+        # Check if the moved-to space is occupied by the player's own piece
         if board[moved_to_coords[1]][moved_to_coords[0]] is not None:
             moved_to_color = board[moved_to_coords[1]][moved_to_coords[0]].get_color()
             if self._players_turn == moved_to_color:
                 return False
 
-        # Checks if square being moved from contains piece belonging to current player
-        if board[moved_from_coords[1]][moved_from_coords[0]] is not None:
-            piece_color = board[moved_from_coords[1]][moved_from_coords[0]].get_color()
-            if piece_color != self._players_turn:
-                return False
-        else:
+        # Check if the square being moved from contains a piece belonging to the current player
+        if board[moved_from_coords[1]][moved_from_coords[0]] is None:
+            return False
+
+        piece_color = board[moved_from_coords[1]][moved_from_coords[0]].get_color()
+        if piece_color != self._players_turn:
             return False
 
         # Checks if move is legal
@@ -574,32 +412,9 @@ class ChessVar:
 
         if diff_coords in piece_legal_moves:
 
-            # Checks for pieces in path, return False if path is not clear
-            if row_from == row_to:  # Moving vertically
-                if column_from < column_to:
-                    move = 1  # Moving forward
-                else:
-                    move = -1  # Backward
-                position = column_from + move
-                while position != column_to:
-                    if board[row_from][position] is not None:
-                        return False
-                    position += move
-
-            elif column_from == column_to:  # Moving horizontally
-                if row_from < row_to:
-                    move = 1   # to right
-                else:
-                    move = -1  # to left
-                position = row_from + move
-                while position != row_to:
-                    if board[position][column_from] is not None:
-                        return False
-                    position += move
-
-            # Checks for capture, if so removes piece and puts piece in player's captured list. Checks to verify if
-            # piece in moved_to spot belongs to other player; if so, eligible for capture. If piece being captured is not
-            # a pawn, then player's capture count is incremented in order to be able to use in fairy piece eligibility.
+            #Checks for capture and, if found, removes the captured piece, placing it in the player's capture list. 
+            #Verifies if the piece in the destination spot belongs to the opponent, making it eligible for capture. 
+            #If the captured piece is not a pawn, increments the player's capture count for fairy piece eligibility.
             moved_to_piece = board[moved_to_coords[1]][moved_to_coords[0]]
             if moved_to_piece is not None:
                 if isinstance(piece, Pawn):  # Since Pawn can only capture diagonally, not ahead
