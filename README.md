@@ -1,6 +1,6 @@
 # Chess Game
 
-This is a simple implementation of a chess game in Python.
+This is a simple implementation of a variant of a chess game in Python.
 
 ## Overview
 
