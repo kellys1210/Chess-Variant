@@ -32,11 +32,3 @@ git clone https://github.com/kellys1210/chess-game.git
 cd chess-game
 python main.py
 ```
-
-## Contributing
-
-Contributions are welcome! If you have suggestions for improvements or you find any bugs, please feel free to open an issue or create a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
