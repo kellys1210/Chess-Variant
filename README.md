@@ -1,34 +1,86 @@
-# Chess Game
+# ChessVar: Abstract Variant of Chess
 
-This is a simple implementation of a variant of a chess game in Python.
+ChessVar is an abstract variant of chess implemented in Python, featuring standard chess pieces along with additional fairy pieces, the Hunter and Falcon. This variant introduces unique rules while maintaining the core mechanics of movement and capture from traditional chess.
 
-## Overview
+## Table of Contents
 
-This chess game is implemented using object-oriented programming principles in Python. It allows two players to play against each other on a standard 8x8 chessboard.
+- [Game Overview](#game-overview)
+- [Setup](#setup)
+- [Game Rules](#game-rules)
+- [Special Pieces](#special-pieces)
+- [Board Display](#board-display)
+- [Commands](#commands)
+- [License](#license)
 
-## Features
+## Game Overview
 
-- Movement validation according to the rules of chess.
-- Support for all standard chess pieces: King, Queen, Bishop, Knight, Rook, and Pawn.
-- Special fairy pieces: Falcon and Hunter, which have unique movement patterns.
-- Simple console-based user interface for playing the game.
+ChessVar follows the basic principles of chess gameplay but includes some variations and special pieces:
 
-## Special Pieces
+- **Pieces in Play**: King, Queen, Knight, Bishop, Rook, Pawn, Hunter, Falcon.
+- **Special Pieces**: Hunter and Falcon enter the game after a player has captured two major pieces.
 
-### Falcon
+## Setup
 
-The Falcon is a special fairy piece that can move forward like a bishop or backward like a rook.
+Ensure you have Python installed to run the game locally. Clone the repository:
 
-### Hunter
+```bash
+git clone https://github.com/kellys1210/ChessVar.git
+cd ChessVar
 
-The Hunter is another special fairy piece that can move forward like a rook or backward like a bishop.
-
-## Installation
-
-Clone the repository and run the game using the following commands:
 
 ```bash
 git clone https://github.com/kellys1210/chess-game.git
 cd chess-game
 python main.py
 ```
+
+## Run the game:
+
+```bash
+python main.py
+```
+
+Follow the prompts to make moves and enter fairy pieces when eligible.
+
+## Game Rules
+----------
+
+*   **Movement and Capture**: Pieces move and capture as in standard chess.
+    
+*   **Winning Condition**: Capture the opponent's King to win.
+    
+*   **Special Rules**: No check or checkmate, no castling, en passant, or pawn promotion.
+    
+
+## Special Pieces
+--------------
+
+### Hunter
+
+*   Moves forward like a Rook or backward like a Bishop.
+    
+
+### Falcon
+
+*   Moves forward like a Bishop or backward like a Rook.
+    
+
+## Board Display
+-------------
+
+The board is displayed in ASCII with pieces represented by Unicode symbols:
+
+
+
+## Commands
+--------
+
+*   **make\_move(from\_position, to\_position)**: Make a move on the board.
+    
+*   **enter\_fairy\_piece(type, entry\_position)**: Enter a fairy piece onto the board.
+
+## License
+-------
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
