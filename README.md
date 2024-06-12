@@ -26,15 +26,9 @@ Ensure you have Python installed to run the game locally. Clone the repository:
 ```bash
 git clone https://github.com/kellys1210/ChessVar.git
 cd ChessVar
-
-
-```bash
-git clone https://github.com/kellys1210/chess-game.git
-cd chess-game
-python main.py
 ```
 
-## Run the game:
+# Run the game:
 
 ```bash
 python main.py
@@ -70,6 +64,15 @@ Follow the prompts to make moves and enter fairy pieces when eligible.
 
 The board is displayed in ASCII with pieces represented by Unicode symbols:
 
+  a b c d e f g h
+8 r n b q k b n r 
+7 p p p p p p p p 
+6 . . . . . . . . 
+5 . . . . . . . . 
+4 . . . . . . . . 
+3 . . . . . . . . 
+2 P P P P P P P P 
+1 R N B Q K B N R 
 
 
 ## Commands
