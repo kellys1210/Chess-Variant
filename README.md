@@ -28,7 +28,7 @@ git clone https://github.com/kellys1210/ChessVar.git
 cd ChessVar
 ```
 
-# Run the game:
+### Run the game:
 
 ```bash
 python main.py
