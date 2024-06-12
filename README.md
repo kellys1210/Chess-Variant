@@ -37,7 +37,6 @@ python main.py
 Follow the prompts to make moves and enter fairy pieces when eligible.
 
 ## Game Rules
-----------
 
 *   **Movement and Capture**: Pieces move and capture as in standard chess.
     
@@ -47,7 +46,6 @@ Follow the prompts to make moves and enter fairy pieces when eligible.
     
 
 ## Special Pieces
---------------
 
 ### Hunter
 
@@ -60,7 +58,6 @@ Follow the prompts to make moves and enter fairy pieces when eligible.
     
 
 ## Board Display
--------------
 
 The board is displayed in ASCII with pieces represented by Unicode symbols:
 
@@ -76,14 +73,12 @@ The board is displayed in ASCII with pieces represented by Unicode symbols:
 
 
 ## Commands
---------
 
 *   **make\_move(from\_position, to\_position)**: Make a move on the board.
     
 *   **enter\_fairy\_piece(type, entry\_position)**: Enter a fairy piece onto the board.
 
 ## License
--------
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
