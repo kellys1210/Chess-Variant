@@ -1,6 +1,6 @@
-# ChessVar: Abstract Variant of Chess
+# Abstract Variant of Chess
 
-ChessVar is an abstract variant of chess implemented in Python, featuring standard chess pieces along with additional fairy pieces, the Hunter and Falcon. This variant introduces unique rules while maintaining the core mechanics of movement and capture from traditional chess.
+This is an abstract variant of chess implemented in Python, featuring standard chess pieces along with additional fairy pieces, the Hunter and Falcon. This variant introduces unique rules while maintaining the core mechanics of movement and capture from traditional chess.
 
 ## Table of Contents
 
